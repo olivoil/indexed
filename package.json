@@ -15,7 +15,7 @@
   "author": "Aleksey Kulikov <alekseys.kulikov@gmail.com> (http://twitter.com/ask_11)",
   "license": "MIT",
   "scripts": {
-    "postinstall": "component install",
+    "postinstall": "command -v component > /dev/null && component install",
     "test": "testem -f test/testem.json ci",
     "start": "testem -f test/testem.json",
     "build": "component build",
@@ -23,9 +23,9 @@
     "stat": "cloc index.js lib/ --quiet && cloc test/*.js --quiet"
   },
   "dependencies": {
-    "component": "*"
   },
   "devDependencies": {
+    "component": "*",
     "testem": "*",
     "chai": "*",
     "async": "*"

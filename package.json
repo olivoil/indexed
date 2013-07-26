@@ -31,7 +31,8 @@
     "chai": "*",
     "async": "*",
     "tape": "*",
-    "browserify": "*"
+    "browserify": "*",
+    "setimmediate": "~1.0.1"
   },
   "testling": {
     "preprocess": "npm run build",

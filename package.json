@@ -22,17 +22,13 @@
     "release": "./script/release",
     "stat": "cloc index.js lib/ --quiet && cloc test/**/*.js --quiet"
   },
-  "dependencies": {
-    "abstract-leveldown": "~0.7.2"
-  },
   "devDependencies": {
     "component": "*",
     "testem": "*",
     "chai": "*",
     "async": "*",
     "tape": "*",
-    "browserify": "*",
-    "setimmediate": "~1.0.1"
+    "browserify": "*"
   },
   "testling": {
     "preprocess": "npm run build",

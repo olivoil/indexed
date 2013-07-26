@@ -25,9 +25,9 @@
     "lib/index.js",
     "lib/indexeddb.js",
     "lib/localstorage.js",
-    "lib/abstract/leveldown.js",
-    "lib/abstract/iterator.js",
-    "lib/abstract/chained-batch.js",
+    "lib/abstract/abstract-leveldown.js",
+    "lib/abstract/abstract-iterator.js",
+    "lib/abstract/abstract-chained-batch.js",
     "lib/process/index.js",
     "lib/process/set-immediate.js"
   ]

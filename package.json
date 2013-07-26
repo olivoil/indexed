@@ -32,7 +32,8 @@
     "chai": "*",
     "async": "*",
     "tape": "*",
-    "browserify": "*"
+    "browserify": "*",
+    "underscore": "*"
   },
   "testling": {
     "preprocess": "npm run build",

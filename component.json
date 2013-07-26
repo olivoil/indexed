@@ -18,9 +18,9 @@
     "component/each": "*"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": [
-    "index.js",
+    "lib/index.js",
     "lib/indexeddb.js",
     "lib/localstorage.js"
   ]

@@ -560,7 +560,7 @@ function array(obj, fn) {
   }
 }
 });
-requireIndexed.register("indexed/index.js", function(exports, require, module){
+requireIndexed.register("indexed/lib/index.js", function(exports, require, module){
 var Indexed  = requireIndexed('./lib/indexeddb');
 module.exports = Indexed.supported ? Indexed : requireIndexed('./lib/localstorage');
 
@@ -660,7 +660,7 @@ Indexed.prototype.all = transaction('readonly', function(store, tr, cb) {
     var cursor = this.result;
     if (cursor) {
       result.push(cursor.value);
-      cursor.continue();
+      cursor['continue']();
     } else {
       cb(null, result);
     }
@@ -701,7 +701,7 @@ Indexed.prototype.clear = transaction('readwrite', function(store, tr, cb) {
  */
 
 Indexed.prototype.del = transaction('readwrite', function(store, tr, key, cb) {
-  request(store.delete(key), tr, cb);
+  request(store['delete'](key), tr, cb);
 });
 
 /**
@@ -733,7 +733,7 @@ Indexed.prototype._getStore = function(mode, cb) {
   this._getDb(function(err, db) {
     if (err) return cb(err);
 
-    var transaction = db.transaction([this.name], mode);
+    var transaction = db.transaction(this.name, mode);
     var objectStore = transaction.objectStore(this.name);
     cb.call(this, null, objectStore, transaction);
   });
@@ -863,7 +863,7 @@ Indexed.prototype._getUpgradeConfig = function(db, save) {
  */
 
 function request(req, tr, cb) {
-  req.onerror = function(event) { cb.call(this, event); };
+  req.onerror = function(event) { if (cb) cb.call(this, event); };
 
   if (!cb)
     req.onsuccess = function(event) { tr.call(this, null); };
@@ -943,7 +943,7 @@ Indexed.dropDb = function(name, cb) {
 };
 
 // Always supported
-Indexed.supported = true;
+Indexed.supported = store.enabled;
 
 /**
  * Returns all values from the store.
@@ -1103,7 +1103,7 @@ requireIndexed.alias("component-each/index.js", "indexed/deps/each/index.js");
 requireIndexed.alias("component-each/index.js", "each/index.js");
 requireIndexed.alias("component-type/index.js", "component-each/deps/type/index.js");
 
-requireIndexed.alias("indexed/index.js", "indexed/index.js");if (typeof exports == "object") {
+requireIndexed.alias("indexed/lib/index.js", "indexed/index.js");if (typeof exports == "object") {
   module.exports = requireIndexed("indexed");
 } else if (typeof define == "function" && define.amd) {
   define(function(){ return requireIndexed("indexed"); });

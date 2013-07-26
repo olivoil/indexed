@@ -15,7 +15,8 @@
     "marcuswestin/store.js": "*",
     "component/clone": "*",
     "component/type": "*",
-    "component/each": "*"
+    "component/each": "*",
+    "avetisk/defaults": "*"
   },
   "license": "MIT",
   "main": "lib/index.js",

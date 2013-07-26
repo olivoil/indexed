@@ -1,8 +1,8 @@
-var _     = require('underscore');
-var dbidx = 0;
+var dbidx  = 0;
+var dbName = 'leveldown-test-db';
 
 exports.location = function() {
-  return namespace(dbidx++);
+  return dbName + ':' + dbidx++;
 };
 
 exports.setUp =
@@ -18,19 +18,6 @@ exports.tearDown = function (t) {
  */
 
 function cleanup(cb) {
-  if (!dbidx) return cb();
-
-  var done = _.after(dbidx, cb);
-  _.times(dbidx, function(i) {
-    Indexed.dropDb(namespace(i), function(err) {
-      err ? cb(err) : done();
-    });
-  });
-
-  // reset counter
-  dbidx = 0;
-}
-
-function namespace(i) {
-  return 'leveldown-test-db:' + i;
+  dbidx = 0; // reset counter
+  Indexed.dropDb(dbName, cb);
 }

@@ -18,17 +18,21 @@
     "postinstall": "command -v component > /dev/null && component install",
     "test": "testem -f test/testem.json ci",
     "start": "testem -f test/testem.json",
-    "build": "component build",
-    "release": "component build --standalone Indexed && sed -i.bak 's/require/requireIndexed/' build/build.js && cp ./build/build.js ./dist/indexed.js",
+    "build": "component build && npm run browserify",
+    "browserify": "mkdir -p tmp/ && browserify test/abstract-leveldown-suite.js -o tmp/test-bundle.js",
+    "release": "component build --standalone Indexed && sed -i.bak 's/require/requireIndexed/' build/build.js && cp ./build/build.js ./indexed.js",
     "stat": "cloc index.js lib/ --quiet && cloc test/*.js --quiet"
   },
   "dependencies": {
+    "abstract-leveldown": "~0.7.2"
   },
   "devDependencies": {
     "component": "*",
     "testem": "*",
     "chai": "*",
-    "async": "*"
+    "async": "*",
+    "tape": "*",
+    "browserify": "*"
   },
   "testling": {
     "preprocess": "npm run build",

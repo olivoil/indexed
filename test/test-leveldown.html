@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <title>Indexed - leveldown compatibility</title>
+  <script src="../build/build.js" charset="UTF-8"></script>
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <style type="text/css">
+    p { margin: 1px; font-size: 11px }
+  </style>
+  <script>
+    // TODO: test localStorage fallback too
+    window.Indexed = require('indexed');
+
+    var log = console.log;
+    var el  = document.getElementById('mocha');
+    console.log = function() {
+      var node = document.createElement('p');
+      node.innerHTML = [].join.call(arguments, ' ');
+      el.appendChild(node);
+      log.apply(console, arguments);
+    }
+  </script>
+  <script src="../tmp/test-bundle.js"></script>
+</body>
+</html>

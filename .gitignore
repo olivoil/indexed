@@ -4,3 +4,4 @@ libpeerconnection.log
 /components
 /build
 /node_modules
+/tmp

@@ -1,0 +1,16 @@
+{
+  "name": "abstract-test-suite",
+  "scripts": [
+    "test/approximate-size-test.js",
+    "test/batch-test.js",
+    "test/chained-batch-test.js",
+    "test/close-test.js",
+    "test/del-test.js",
+    "test/get-test.js",
+    "test/iterator-test.js",
+    "test/leveldown-test.js",
+    "test/open-test.js",
+    "test/put-get-del-test.js",
+    "test/put-test.js"
+  ]
+}

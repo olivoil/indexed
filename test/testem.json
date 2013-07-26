@@ -1,11 +1,10 @@
 {
-  "before_tests": "npm run build",
+  "before_tests": "npm run build && npm run browserify",
   "launch_in_dev": ["phantomjs"],
   "launch_in_ci": ["phantomjs", "chrome", "firefox"],
-  "test_page": "test/test-runner.html",
+  "test_page": "test/leveldown/test-runner.html",
   "src_files": [
-    "index.js",
     "lib/*",
-    "test/*"
+    "test/leveldown/*"
   ]
 }

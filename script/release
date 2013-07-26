@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+node_modules/component/bin/component build --standalone Indexed
+sed -i.bak 's/require/requireIndexed/' build/build.js
+cp ./build/build.js ./indexed.js

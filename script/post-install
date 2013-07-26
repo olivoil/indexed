@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+component=../node_modules/component/bin/component
+browserify=../node_modules/browserify/bin/cmd.js
+
+# install components
+component install
+
+# build local version of tape
+mkdir -p tmp
+browserify ./node_modules/tape/index.js --standalone tape --outfile tmp/tape.js
+
+# build component version of abstract test suite
+cd test/abstract
+component build --no-require --out ../../tmp --name abstract-test-suite.js
+cd ../..

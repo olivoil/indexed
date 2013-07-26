@@ -15,12 +15,11 @@
   "author": "Aleksey Kulikov <alekseys.kulikov@gmail.com> (http://twitter.com/ask_11)",
   "license": "MIT",
   "scripts": {
-    "postinstall": "command -v component > /dev/null && component install",
+    "postinstall": "command -v component > /dev/null && ./script/post-install",
     "test": "testem -f test/testem.json ci",
     "start": "testem -f test/testem.json",
     "build": "component build",
-    "browserify": "mkdir -p tmp/ && browserify test/leveldown/test-suite.js -o tmp/test-bundle.js",
-    "release": "component build -s Indexed && sed -i.bak 's/require/requireIndexed/' build/build.js && cp ./build/build.js ./indexed.js",
+    "release": "./script/release",
     "stat": "cloc index.js lib/ --quiet && cloc test/**/*.js --quiet"
   },
   "dependencies": {

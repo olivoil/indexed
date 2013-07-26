@@ -1,7 +1,7 @@
 {
   "before_tests": "npm run build && npm run browserify",
-  "launch_in_dev": ["phantomjs"],
-  "launch_in_ci": ["phantomjs", "chrome", "firefox"],
+  "launch_in_dev": [],
+  "launch_in_ci": ["chrome", "firefox"],
   "test_page": "test/leveldown/test-runner.html",
   "src_files": [
     "lib/*",

@@ -134,7 +134,7 @@ tags.del(3, function(err) {
 
   Clear object store.
 
-### Indexed.dropDb(name, cb)
+### Indexed.destroy(name, cb)
 
   Drop existing database. Useful for testing and development.
 

@@ -19,5 +19,5 @@ exports.tearDown = function (t) {
 
 function cleanup(cb) {
   dbidx = 0; // reset counter
-  Indexed.dropDb(dbName, cb);
+  Indexed.destroy(dbName, cb);
 }

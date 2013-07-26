@@ -17,7 +17,7 @@
   testCommon.setUp =
   testCommon.tearDown = function (t) {
     dbidx = 0; // reset counter
-    Indexed.dropDb(dbName, function(err) {
+    Indexed.destroy(dbName, function(err) {
       t.notOk(err, 'cleanup returned an error');
       t.end();
     });

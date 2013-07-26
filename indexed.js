@@ -618,7 +618,7 @@ function Indexed(name, options) {
  * @api public
  */
 
-Indexed.dropDb = function(dbName, cb) {
+Indexed.destroy = function(dbName, cb) {
   if (dbs[dbName]) db.close();
   delete configs[dbName];
   delete dbs[dbName];
@@ -935,7 +935,7 @@ function Indexed(name, options) {
 
 // TODO: control DB names
 // TODO: DRY with clear
-Indexed.dropDb = function(name, cb) {
+Indexed.destroy = function(name, cb) {
   each(store.getAll(), function(key, val) {
     if (key.indexOf(name) === 0) store.remove(key);
   });
@@ -1050,7 +1050,7 @@ Indexed.prototype._validateKey = function() {
   var name       = this._name();
   var currentKey = keys[name];
 
-  if (currentKey && currentKey !== this.key) Indexed.dropDb(name);
+  if (currentKey && currentKey !== this.key) Indexed.destroy(name);
   if (!currentKey || currentKey !== this.key) {
     keys[name] = this.key;
     store.set('.indexed-keys', keys);

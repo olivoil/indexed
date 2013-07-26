@@ -16,13 +16,19 @@
     "component/clone": "*",
     "component/type": "*",
     "component/each": "*",
-    "avetisk/defaults": "*"
+    "avetisk/defaults": "*",
+    "component/inherit": "*"
   },
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": [
     "lib/index.js",
     "lib/indexeddb.js",
-    "lib/localstorage.js"
+    "lib/localstorage.js",
+    "lib/abstract/leveldown.js",
+    "lib/abstract/iterator.js",
+    "lib/abstract/chained-batch.js",
+    "lib/process/index.js",
+    "lib/process/set-immediate.js"
   ]
 }

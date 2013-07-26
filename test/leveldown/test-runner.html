@@ -15,15 +15,6 @@
   <script>
     // TODO: test localStorage fallback too
     window.Indexed = require('indexed');
-
-    var log = console.log;
-    var el  = document.getElementById('mocha');
-    console.log = function() {
-      var node = document.createElement('p');
-      node.innerHTML = [].join.call(arguments, ' ');
-      el.appendChild(node);
-      log.apply(console, arguments);
-    }
   </script>
   <script src="../../tmp/test-bundle.js"></script>
 </body>

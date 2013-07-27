@@ -29,6 +29,7 @@
     "lib/abstract/abstract-iterator.js",
     "lib/abstract/abstract-chained-batch.js",
     "lib/process.js",
-    "lib/buffer.js"
+    "lib/buffer.js",
+    "lib/utils.js"
   ]
 }

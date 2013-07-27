@@ -74,7 +74,11 @@ notes.clear(function(err) {});
 ### new Indexed(name, [options])
 
   Create a new Indexed instance to work with selected [store](https://developer.mozilla.org/en-US/docs/IndexedDB/IDBObjectStore) and [db](https://developer.mozilla.org/en-US/docs/IndexedDB/IDBDatabase). **Name** follows simple convention `db-name:store-name`.
-  **Options** helps you define [keyPath](https://developer.mozilla.org/en-US/docs/IndexedDB/Basic_Concepts_Behind_IndexedDB#gloss_keypath) value as a `key` option. If you will change key for existing store, it recreates storage and deletes existing data associted with store.
+  **Options** helps you define:
+
+  * [keyPath](https://developer.mozilla.org/en-US/docs/IndexedDB/Basic_Concepts_Behind_IndexedDB#gloss_keypath) value as a `key` option. If you will change key for existing store, it recreates storage and deletes existing data associted with store.
+  * `openOptions` - add docs
+  * `levelDown` - full featured level down compatibility
 
 ```js
 var tags = new Indexed('notepad:tags', { key: 'updatedAt' });

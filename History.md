@@ -2,6 +2,7 @@
 
   * ~ leveldown compatibility
   * ~ new methods: `open`, `close`, `batch`, `iterator`
+  * remove keyPath logic
   * ~ brand new test-suite
   * ~ full rewrite of localStorage fallback - one item per store, use memory, merge with storage
   * ~ fix weird browsers issues https://ci.testling.com/ask11/indexed, #5

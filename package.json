@@ -23,6 +23,7 @@
     "stat": "cloc index.js lib/ --quiet && cloc test/**/*.js --quiet"
   },
   "devDependencies": {
+    "abstract-leveldown": "0.7.3",
     "component": "*",
     "testem": "*",
     "chai": "*",

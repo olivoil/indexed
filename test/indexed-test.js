@@ -1,6 +1,6 @@
 (function() {
   var Indexed    = require('indexed');
-  var testBuffer = Indexed.toArrayBuffer('foo');
+  var testBuffer = require('indexed/lib/buffer').strToBuffer('foo');
 
   function factory(location) {
     return new Indexed(location);

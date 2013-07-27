@@ -28,6 +28,7 @@
     "lib/abstract/abstract-leveldown.js",
     "lib/abstract/abstract-iterator.js",
     "lib/abstract/abstract-chained-batch.js",
-    "lib/process/index.js"
+    "lib/process.js",
+    "lib/buffer.js"
   ]
 }

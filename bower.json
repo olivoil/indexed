@@ -5,7 +5,9 @@
   "main": "indexed.js",
   "ignore": [
     "**/.*",
-    "index.js",
+    "lib",
+    "script",
+    "test",
     "component.json",
     "package.json"
   ]

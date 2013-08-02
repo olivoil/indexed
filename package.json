@@ -20,7 +20,7 @@
     "start": "testem -f test/testem.json",
     "build": "component build --out tmp",
     "release": "./script/release",
-    "stat": "cloc index.js lib/ --quiet && cloc test/**/*.js --quiet"
+    "stat": "cloc lib/ --quiet --exclude-dir=abstract --by-file && cloc test/*.js --quiet --by-file"
   },
   "devDependencies": {
     "abstract-leveldown": "0.7.3",

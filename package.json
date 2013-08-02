@@ -18,7 +18,7 @@
     "postinstall": "command -v component > /dev/null && ./script/post-install",
     "test": "testem -f test/testem.json ci",
     "start": "testem -f test/testem.json",
-    "build": "component build",
+    "build": "component build --out tmp",
     "release": "./script/release",
     "stat": "cloc index.js lib/ --quiet && cloc test/**/*.js --quiet"
   },

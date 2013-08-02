@@ -1,8 +1,9 @@
 ## 0.6.0 / 2013-..-..
 
   * ~ leveldown compatibility
-  * ~ new methods: `open`, `close`, `batch`, `iterator`
   * remove keyPath logic
+  * add script/post-install and script/release to simplify package.json
+  * ~ new methods: `open`, `close`, `batch`, `iterator`
   * ~ brand new test-suite
   * ~ full rewrite of localStorage fallback - one item per store, use memory, merge with storage
   * ~ fix weird browsers issues https://ci.testling.com/ask11/indexed, #5

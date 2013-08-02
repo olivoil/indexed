@@ -32,7 +32,7 @@
     "browserify": "*"
   },
   "testling": {
-    "preprocess": "npm run build",
+    "preprocess": "./script/post-install",
     "html": "test/test-runner.html",
     "browsers": [
       "ie/6..latest",

@@ -25,11 +25,11 @@
     "lib/index.js",
     "lib/indexeddb.js",
     "lib/localstorage.js",
-    "lib/abstract/abstract-leveldown.js",
-    "lib/abstract/abstract-iterator.js",
-    "lib/abstract/abstract-chained-batch.js",
     "lib/process.js",
     "lib/buffer.js",
-    "lib/utils.js"
+    "lib/utils.js",
+    "vendor/abstract-leveldown/abstract-leveldown.js",
+    "vendor/abstract-leveldown/abstract-iterator.js",
+    "vendor/abstract-leveldown/abstract-chained-batch.js"
   ]
 }

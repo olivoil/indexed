@@ -13,7 +13,7 @@ describe('Indexed', function() {
         notes.clear(done);
       });
 
-      it('validates name paramether', function() {
+      it('validates name parameter', function() {
         expect(function() {
           new Indexed();
         }).throw(/name/);
@@ -33,6 +33,25 @@ describe('Indexed', function() {
           notes.get(['doom', 3, [1, 2]], function(err2, note) {
             expect(note.name).equal('note 4');
             done(err || err2);
+          });
+        });
+      });
+
+      describe('createIndex', function(){
+        it('retrieves documents by key', function(done){
+          notes.createIndex('name');
+
+          async.series([
+            function(cb) { notes.put([1], { name: 'note 1' }, cb); },
+            function(cb) { notes.put([2], { name: 'note 2' }, cb); },
+            function(cb) { notes.put('key', { name: 'note 3' }, cb); },
+            function(cb) { notes.put(['doom', 3, [1, 2]], { name: 'note 4' }, cb); },
+            function(cb) { notes.put('a b c', { name: 'note 5' }, cb); }
+          ], function(err, result) {
+            notes.get('name', 'note 3', function(err2, note){
+              expect(note.name).equal('note 3');
+              done(err || err2);
+            });
           });
         });
       });
@@ -167,7 +186,7 @@ describe('Indexed', function() {
         });
       });
 
-      it('connects to multiply databases', function(done) {
+      it('connects to multiple databases', function(done) {
         async.series([
           function(cb) { Indexed.dropDb('testapp4', cb); },
           function(cb) { Indexed.dropDb('testapp5', cb); },
